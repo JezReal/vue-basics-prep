@@ -8,6 +8,7 @@ import CustomCard from "./CustomCard.vue";
     <custom-card message="second" />
     <custom-card message="third" />
     <custom-card message="fourth" />
+    <custom-card />
   </div>
 </template>
 
