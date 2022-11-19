@@ -62,4 +62,11 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+
+input {
+  height: 30px;
+  width: 500px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
 </style>
