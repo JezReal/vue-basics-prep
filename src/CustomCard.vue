@@ -43,7 +43,7 @@ img {
 
 .title {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .description {
