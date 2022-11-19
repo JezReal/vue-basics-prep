@@ -5,7 +5,7 @@ import CustomCard from "./CustomCard.vue";
 
 const artists = ref<ArtistWithIdDto[]>([]);
 let cachedArtists: ArtistWithIdDto[];
-const searchTerm = ref<string>("");
+const searchTerm = ref("");
 
 function searchArtists() {
   if (searchTerm.value.length > 0) {
