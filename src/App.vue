@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import type { ArtistWithIdDto } from "./ArtistWithIdDto";
 import CustomCard from "./CustomCard.vue";
 
@@ -9,7 +9,7 @@ const searchTerm = ref<string>("");
 
 function searchArtists() {
   if (searchTerm.value.length > 0) {
-    artists.value = artists.value.filter((artist) => {
+    artists.value = cachedArtists.filter((artist) => {
       return artist.artist_name.toLowerCase().includes(searchTerm.value);
     });
   } else {
