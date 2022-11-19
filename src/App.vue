@@ -7,17 +7,15 @@ const artists = ref<ArtistWithIdDto[]>([]);
 let cachedArtists: ArtistWithIdDto[];
 const searchTerm = ref<string>("");
 
-watch(searchTerm, (newSearch) => {
-  if (newSearch) {
-    newSearch = newSearch.trim().toLowerCase();
-
+function searchArtists() {
+  if (searchTerm.value.length > 0) {
     artists.value = artists.value.filter((artist) => {
-      return artist.artist_name.toLowerCase().includes(newSearch);
+      return artist.artist_name.toLowerCase().includes(searchTerm.value);
     });
   } else {
     artists.value = cachedArtists;
   }
-});
+}
 
 fetch("https://localhost:7068/api/artists")
   .then((response) => response.json())
@@ -35,6 +33,7 @@ fetch("https://localhost:7068/api/artists")
       placeholder="Search..."
       name="search_term"
       v-model="searchTerm"
+      @input="searchArtists"
     />
 
     <div v-if="artists.length > 0" class="cards">
